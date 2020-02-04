@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +11,20 @@ namespace GenerateAndDisplayNames
     {
         static void Main(string[] args)
         {
-            string[] names = GenerateNames();
+            var names = GenerateNames();
             PrintNames(names);
         }
 
-        static string[] GenerateNames()
+        static ArrayList GenerateNames()
         {
-            string[] names = new string[4];
-            names[0] = "batman";
-            names[1] = "robin";
-            names[2] = "nightwing";
-            names[3] = "batwoman";
+            ArrayList names = new ArrayList();
+            names.Add("batman");
+            names.Add("robin");
+            names.Add("nightwing");
+            names.Add("batwoman");
             return names;
         }
-
-        static void PrintNames(string[] names)
+        static void PrintNames(ArrayList names)
         {
             foreach(string s in names)
             {
