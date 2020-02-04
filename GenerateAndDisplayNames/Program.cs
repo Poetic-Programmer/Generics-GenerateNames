@@ -14,18 +14,32 @@ namespace GenerateAndDisplayNames
         {
             var names = GenerateNames();
             PrintNames(names);
+
+            List<string> newNames = CopyAtMost<string>(names, 20);
+            PrintNames(newNames);
         }
 
-        static StringCollection GenerateNames()
+        static List<String> GenerateNames()
         {
-            StringCollection names = new StringCollection();
+            List<string> names = new List<string>();
             names.Add("batman");
             names.Add("robin");
             names.Add("nightwing");
             names.Add("batwoman");
             return names;
         }
-        static void PrintNames(StringCollection names)
+        static List<T> CopyAtMost<T>(List<T> input, int maxElecments)
+        {
+            int actualCount = Math.Min(input.Count, maxElecments);
+            List<T> ret = new List<T>(actualCount);
+            for(int i = 0; i < actualCount; ++i)
+            {
+                ret.Add(input[i]);
+            }
+            return ret;
+        }
+
+        static void PrintNames(List<string> names)
         {
             foreach(string s in names)
             {
