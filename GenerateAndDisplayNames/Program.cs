@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,16 +16,16 @@ namespace GenerateAndDisplayNames
             PrintNames(names);
         }
 
-        static ArrayList GenerateNames()
+        static StringCollection GenerateNames()
         {
-            ArrayList names = new ArrayList();
+            StringCollection names = new StringCollection();
             names.Add("batman");
             names.Add("robin");
             names.Add("nightwing");
             names.Add("batwoman");
             return names;
         }
-        static void PrintNames(ArrayList names)
+        static void PrintNames(StringCollection names)
         {
             foreach(string s in names)
             {
